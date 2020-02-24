@@ -2,7 +2,7 @@ function save(){
 	var fName = document.getElementById('firstName').value;
 	var lName = document.getElementById('lastName').value;
 	var tAge = document.getElementById('age').value;
-	function Person(name, lastName, age){		
+	function Person(name, lastName, age){	
 		this.name = name;
 		this.lastName = lastName;
 		this.age = age;
@@ -14,15 +14,23 @@ function save(){
 				return "Childhood";
 			}else if (this.age < 21) {
 				return "Adolescence";
-			}else if (this.age < 61) {
+			}else if (this.age < 72) {
 				return "Adulthood";
 			}else {
 				return "Old age";
 			}
-		}
+		}		
 	}	
 
+	
 	newPerson = new Person(fName, lName, tAge);
+
+	var myJSON = JSON.stringify(newPerson);
+	document.getElementById("demo2").innerHTML = "JSON stringified: " + myJSON;
+
+	var text = myJSON;
+	var obj = JSON.parse(text);
+	document.getElementById("demo3").innerHTML = "JSON parsed: " + obj.name + " " + obj.lastName;
 
 	document.getElementById('demo').innerHTML = "The last person added was " + newPerson.fullName();
 	addPerson();
