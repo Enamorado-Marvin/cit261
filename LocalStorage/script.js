@@ -41,9 +41,9 @@ function calculate(){
 var retrieveMacros = localStorage.getItem('newMacronutrients');
 var obj = JSON.parse(retrieveMacros);
 document.getElementById("demo").innerHTML = '<h2>Kcal: ' + obj.kcal + '</h2>'
-    											+ '<b>' + obj.cho + '</b>' + ' gm of CHO (Carbohydrates)'
-    											+ '<br><b>'+ obj.chon +'</b>' + ' gm of CHON (Carbon, hydrogen, oxygen, and nitrogen)'
-    											+ '<br><b>'+ obj.cooh + '</b>' + ' gm of COOH (Carboxylic acid)' ;
+    										+ '<b>' + obj.cho + '</b>' + ' gm of CHO (Carbohydrates)'
+    										+ '<br><b>'+ obj.chon +'</b>' + ' gm of CHON (Carbon, hydrogen, oxygen, and nitrogen)'
+    										+ '<br><b>'+ obj.cooh + '</b>' + ' gm of COOH (Carboxylic acid)' ;
 
 
 function goBack() {
