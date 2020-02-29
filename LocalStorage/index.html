@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculate Macronutrients</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Calculate Macronutrients</h1>
+		<form action="result.html" method="post" onsubmit="calculate()">
+			<div class="row">
+				<div class="col-25">
+					<label>Enter KiloCalories</label>
+				</div>
+				<div class="col-75">
+					<input type="number" name="kcal" id="kcal" placeholder="e.g. 1800">
+					<span id="erK"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label>Enter %CHO</label>
+				</div>
+				<div class="col-75">
+					<input type="number" name="cho" id="cho" placeholder="Between 40-60">
+					<span id="erCh"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label>Enter %CHON</label>
+				</div>
+				<div class="col-75">
+					<input type="number" name="chon" id="chon" placeholder="Between 10-30">
+					<span id="erChn"></span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label>Enter %COOH</label>
+				</div>
+				<div class="col-75">
+					<input type="number" name="cooh" id="cooh" placeholder="Between 20-35">
+					<span id="erC"></span>
+				</div>
+			</div>
+			<div class="row">
+			    <input type="submit" value="Calculate" class="space-top">
+			 </div>			
+		</form>
+	</div>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
