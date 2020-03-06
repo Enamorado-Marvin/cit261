@@ -1,0 +1,22 @@
+{
+   "title" : "A JSON file",
+   "description" : "Here are some interesting articles about JavaScript!",
+   "articles" : [
+       {
+          "title" : "JavaScript Object Constructors",
+          "url"   : "https://www.w3schools.com/js/js_object_constructors.asp"
+       },
+       {
+          "title" : "JavaScript HTML DOM EventListener",
+          "url"   : "https://www.w3schools.com/js/js_htmldom_eventlistener.asp"
+       },
+       {
+          "title" : "On-load counter with JavaScript and local storage",
+          "url"   : "http://code-maven.com/on-load-counter-with-javascript-and-local-storage"
+       },
+       {
+          "title" : "Handling user events in JavaScript",
+          "url"   : "http://code-maven.com/handling-events-in-javascript"
+       }
+   ]
+}
