@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM Manipulation</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h1>Let's play with the elements</h1>
+<p>Start by creating an element. Choose one:</p>
+
+<button id="button" onclick="create_button()">Button</button>
+<button id="paragraph" onclick="create_paragraph()">Paragraph</button>
+<button id="div" onclick="create_div()">Div</button><br><br>
+
+<div id="styles"></div>
+<div id="container"></div>
+<br><br>
+<br><br>
+<h1 class="left">Let's insert a paragraph with insertBefore</h1>
+<div id="father">
+	<p>This is a paragraph.</p>
+	<p>Here is another paragraph.</p>
+</div>
+<button onclick="insert_para()">Insert Paragraph</button>
+<button onclick="remove_para()">Remove Last Paragraph</button>
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
