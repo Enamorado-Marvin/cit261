@@ -1,37 +1,4 @@
- var slider1 = document.getElementById("kcal");
-var output1 = document.getElementById("demo1");
-output1.innerHTML = slider1.value;
-
-slider1.oninput = function() {
-  output1.innerHTML = this.value;
-}
-
-var slider2 = document.getElementById("cho");
-var output2 = document.getElementById("demo2");
-output2.innerHTML = slider2.value;
-
-slider2.oninput = function() {
-  output2.innerHTML = this.value;
-}
-
-var slider3 = document.getElementById("chon");
-var output3 = document.getElementById("demo3");
-output3.innerHTML = slider3.value;
-
-slider3.oninput = function() {
-  output3.innerHTML = this.value;
-}
-
-var slider4 = document.getElementById("cooh");
-var output4 = document.getElementById("demo4");
-output4.innerHTML = slider4.value;
-
-slider4.oninput = function() {
-  output4.innerHTML = this.value;
-}
-
-
-function calculate(){
+/*function calculate(){
 	var kcal = document.getElementById("kcal").value;
     var cho = document.getElementById("cho").value;
     var chon = document.getElementById("chon").value;
@@ -43,7 +10,7 @@ function calculate(){
     	this.chon = chon;
     	this.cooh = cooh;
 
-    	/*this.validate = function(){
+    	this.validate = function(){
     		var totalPercent = this.cho + this.chon + this.cooh;
     		if (this.cho == null || this.cho < 40 || this.cho > 60) {
     			document.getElementById("erCh").innerHTML = "Value must be between 40 and 60";
@@ -59,7 +26,7 @@ function calculate(){
     			return "Number must be 100";
     		}  		
     	}
-*/
+
     }
 
     var calcCho = parseFloat(kcal*(cho/100)/4).toFixed(2);
@@ -81,5 +48,99 @@ document.getElementById("demo").innerHTML = '<h2>Kcal: ' + obj.kcal + '</h2>'
 
 function goBack() {
   window.history.back();
+}*/
+
+var slider1 = document.getElementById("kcal");
+var output1 = document.getElementById("demo1");
+output1.innerHTML = slider1.value;
+
+var slider2 = document.getElementById("cho");
+var output2 = document.getElementById("demo2");
+output2.innerHTML = slider2.value;
+
+var slider3 = document.getElementById("chon");
+var output3 = document.getElementById("demo3");
+output3.innerHTML = slider3.value;
+
+var slider4 = document.getElementById("cooh");
+var output4 = document.getElementById("demo4");
+output4.innerHTML = slider4.value;
+totalPer = 70
+totalPercent.innerHTML = totalPer;
+if (totalPer < 100 || totalPer > 100) {
+        totalPercent.style.color = "red";
+        totalPercent.innerHTML = totalPer + " this total must be 100%";
+    } else {
+        totalPercent.style.color = "green";
+        totalPercent.innerHTML = totalPer + "%";
+    }
+
+
+
+slider1.oninput = function() {
+  output1.innerHTML = this.value;
+  hKcal.innerHTML = "Kilocalories: " + this.value;
+  var calcCho = parseFloat(slider1.value*(slider2.value/100)/4).toFixed(2);
+  gmCho.innerHTML = calcCho + " gm of CHO (Carbohydrates)";
+  var calcChon = parseFloat(slider1.value*(slider3.value/100)/4).toFixed(2);
+  gmChon.innerHTML = calcChon + " gm of CHON (Carbon, hydrogen, oxygen, and nitrogen)";
+  var calcCooh = parseFloat(slider1.value*(slider4.value/100)/9).toFixed(2);
+  gmCooh.innerHTML = calcCooh + " gm of COOH (Carboxylic acid)";
 }
 
+
+
+slider2.oninput = function() {
+  output2.innerHTML = this.value;
+  choPercent.innerHTML = this.value + "% of CHO";
+  var calcCho = parseFloat(slider1.value*(this.value/100)/4).toFixed(2);
+  gmCho.innerHTML = calcCho + " gm of CHO (Carbohydrates)";
+  var totalPer = +this.value + +slider3.value + +slider4.value;
+  totalPercent.innerHTML = totalPer;
+
+  if (totalPer < 100 || totalPer > 100) {
+        totalPercent.style.color = "red";
+        totalPercent.innerHTML = totalPer + " this total must be 100%";
+    } else {
+        totalPercent.style.color = "green";
+        totalPercent.innerHTML = totalPer + "%";
+    }
+}
+
+
+
+slider3.oninput = function() {
+  output3.innerHTML = this.value;
+  chonPercent.innerHTML = this.value + "% of CHON";
+  var calcChon = parseFloat(slider1.value*(this.value/100)/4).toFixed(2);
+  gmChon.innerHTML = calcChon + " gm of CHON (Carbon, hydrogen, oxygen, and nitrogen)";
+  var totalPer = +this.value + +slider2.value + +slider4.value;
+  totalPercent.innerHTML = totalPer;
+
+  if (totalPer < 100 || totalPer > 100) {
+        totalPercent.style.color = "red";
+        totalPercent.innerHTML = totalPer + " this total must be 100%";
+    } else {
+        totalPercent.style.color = "green";
+        totalPercent.innerHTML = totalPer + "%";
+    }
+}
+
+
+
+slider4.oninput = function() {
+  output4.innerHTML = this.value;
+  coohPercent.innerHTML = this.value + "% of COOH";
+  var calcCooh = parseFloat(slider1.value*(this.value/100)/9).toFixed(2);
+  gmCooh.innerHTML = calcCooh + " gm of COOH (Carboxylic acid)";
+  var totalPer = +this.value + +slider3.value + +slider2.value;
+  totalPercent.innerHTML = totalPer;
+
+  if (totalPer < 100 || totalPer > 100) {
+        totalPercent.style.color = "red";
+        totalPercent.innerHTML = totalPer + " this total must be 100%";
+    } else {
+        totalPercent.style.color = "green";
+        totalPercent.innerHTML = totalPer + "%";
+    }
+}
