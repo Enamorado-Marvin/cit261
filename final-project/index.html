@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculate Macronutrients</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Calculate Macronutrients</h1>
+		<form action="result.html" onsubmit="calculate()">
+			<div class="row">
+				<div class="col-25">
+					<label>Enter KiloCalories</label>
+				</div>
+				<div class="col-75">
+					<div class="slidecontainer">
+						<input type="range" min="500" max="3000" value="500" step="100" class="slider" name="kcal" id="kcal">
+						<span id="demo1"></span> KCAL
+					</div>
+				</div>				
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label>Enter %CHO</label>
+				</div>
+				<div class="col-75">
+					<div class="slidecontainer">
+						<input type="range" min="40" max="60" value="40" class="slider" name="cho" id="cho">
+							<span id="demo2"></span> CHO
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label>Enter %CHON</label>
+				</div>
+				<div class="col-75">
+					<div class="slidecontainer">
+						<input type="range" min="10" max="30" value="10" class="slider" name="chon" id="chon">
+							<span id="demo3"></span> CHON
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label>Enter %COOH</label>
+				</div>
+				<div class="col-75">
+					<div class="slidecontainer">
+						<input type="range" min="20" max="35" value="20" class="slider" name="cooh" id="cooh">
+							<span id="demo4"></span> CHO
+					</div>
+				</div>
+			</div>
+			<div class="row">
+			    <input type="submit" value="Calculate" class="space-top">
+			 </div>			
+		</form>
+	</div>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
