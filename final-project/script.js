@@ -1,5 +1,6 @@
+//This function is when index.html is loaded
 function myScript(){
-
+	//Getting values from input elements (sliders)
 	var slider1 = document.getElementById("kcal");
 	var output1 = document.getElementById("hKcal");
 	output1.innerHTML = "Kilocalories: " + slider1.value;
@@ -16,10 +17,10 @@ function myScript(){
 	var output4 = document.getElementById("coohPercent");
 	output4.innerHTML = slider4.value + "% of COOH";
 
-
+	//Default value based on the lowest percent calculation
 	totalPer = 70;
 
-
+	//The default value for the bar is set to 70%
 	bar.style.width = totalPer+"%";
 	if (totalPer < 100 || totalPer > 100) {
 	  bar.style.background = "#FF011B";
@@ -29,7 +30,8 @@ function myScript(){
 	}
 
 
-
+	//events oninput for each slider, this event changes values in both, percent and grams
+	//by calculating the values
 	slider1.oninput = function() {
 	  output1.innerHTML = this.value;
 	  hKcal.innerHTML = "Kilocalories: " + this.value;
@@ -41,6 +43,7 @@ function myScript(){
 	  gmCooh.innerHTML = calcCooh + " gm of COOH (Carboxylic acid)";
 	}
 
+	//events for clicked actions
 	slider1.onmousedown = function() {
 	  hKcal.style.color = "brown";
 	}
@@ -162,8 +165,7 @@ function myScript(){
 	  gmCooh.style.fontWeight = "initial";
 	}
 
-	//Touch events for mobile devices
-
+	//Touch events for mobile devices or touch devices
 	document.getElementById('kcal').addEventListener('touchstart', myFunction1);
 	document.getElementById('kcal').addEventListener('touchend', myFunction2);
 	document.getElementById('cho').addEventListener('touchstart', myFunction3);
@@ -226,6 +228,7 @@ function myScript(){
 	}
 }
 
+//Saving data on local storage by using an object function
 function calculate() {
   var kcal = document.getElementById("kcal").value;
   var cho = document.getElementById("cho").value;
@@ -247,17 +250,17 @@ function calculate() {
 
   localStorage.setItem('newMacronutrients', JSON.stringify(newMacronutrients));
 
-}
-
-var retrieveMacros = localStorage.getItem('newMacronutrients');
-var obj = JSON.parse(retrieveMacros);
-document.getElementById("elements").innerHTML = "<div class='element'>KCAL<p>"+obj.kcal+" gm</p></div>" +
-                                                "<div class='element'>CHO<p>"+obj.cho+" gm</p></div>"+
+  var retrieveMacros = localStorage.getItem('newMacronutrients');
+	var obj = JSON.parse(retrieveMacros);
+	document.getElementById("elements").innerHTML = "<div class='element'>KCAL<p>"+obj.kcal+" gm</p></div>" +
+	                                                "<div class='element'>CHO<p>"+obj.cho+" gm</p></div>"+
                                                 "<div class='element'>CHON<p>"+obj.chon+" gm</p></div>"+
                                                 "<div class='element'>COOH<p>"+obj.cooh+" gm</p></div>";
 
+}
 
 
+//Go to previous page
 function goBack() {
   window.history.back();
 }
