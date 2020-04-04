@@ -1,54 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<title>Calculate Macronutrients</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body onload="myScript()">
 	<div class="container">
 		<h1>Calculate Macronutrients</h1>
-		<form action="result.html" onsubmit="calculate()">
-			<div class="row">
-				<div class="col-25">
-					<label>Enter KiloCalories</label>
-				</div>
-				<div class="col-75">
-					<div class="slidecontainer">
+		<form action="result.html" method="post" onsubmit="calculate()">
+			<div class="row">				
+				<div class="col-100">
+					<div class="slidecontainer" style="white-space:nowrap">
+						<label>KCAL</label>
 						<input type="range" min="500" max="3000" value="500" step="100" class="slider" name="kcal" id="kcal">
-						<span id="demo1"></span> KCAL
 					</div>
-				</div>				
+				</div>		
 			</div>
 			<div class="row">
-				<div class="col-25">
-					<label>Enter %CHO</label>
-				</div>
-				<div class="col-75">
-					<div class="slidecontainer">
-						<input type="range" min="40" max="60" value="40" class="slider" name="cho" id="cho">
-							<span id="demo2"></span> CHO
+				<div class="col-100">
+					<div class="slidecontainer" style="white-space:nowrap">
+						<label>CHO</label>
+						<input type="range" min="40" max="60" value="40" class="slider" name="cho" id="cho">							
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-25">
-					<label>Enter %CHON</label>
-				</div>
-				<div class="col-75">
-					<div class="slidecontainer">
+				<div class="col-100">
+					<div class="slidecontainer" style="white-space:nowrap">
+						<label>CHON</label>
 						<input type="range" min="10" max="30" value="10" class="slider" name="chon" id="chon">
-							<span id="demo3"></span> CHON
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-25">
-					<label>Enter %COOH</label>
-				</div>
-				<div class="col-75">
-					<div class="slidecontainer">
+				<div class="col-100">
+					<div class="slidecontainer" style="white-space:nowrap">
+						<label>COOH</label>
 						<input type="range" min="20" max="35" value="20" class="slider" name="cooh" id="cooh">
-							<span id="demo4"></span> CHO
 					</div>
 				</div>
 			</div>
@@ -59,18 +49,22 @@
 					<p id="choPercent">40% of CHO</p>
 					<p id="chonPercent">10% of CHON</p>
 					<p id="coohPercent">20% of COOH</p>
-					<p id="totalPercent"></p>
 				</div>
 				<div class="col-75">
 					<p id="gmCho">50.00 gm of CHO (Carbohydrates)</p>
 					<p id="gmChon">12.50 gm of CHON (Carbon, hydrogen, oxygen, and nitrogen)</p>
 					<p id="gmCooh">11.11 gm of COOH (Carboxylic acid)</p>
-				</div>
-
+				</div>				
 			</div>
-
 			<div class="row">
-			    <input type="submit" value="Calculate" class="space-top">
+				<div class="col-75">
+					<div id="bar"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-100">
+			    	<input type="submit" value="Save Data" class="space-top">
+				</div>
 			</div>			
 		</form>
 	</div>

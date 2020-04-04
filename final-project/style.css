@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 * {
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
 }
 
 h1{
@@ -39,9 +45,8 @@ input[type=submit]:hover {
 
 .container {
   border-radius: 5px;
-  background-color: #f2f2f2;
   padding: 20px;
-  width: 800px;
+  width: 700px;
   margin: auto;
 }
 
@@ -57,6 +62,12 @@ input[type=submit]:hover {
   margin-top: 6px;
 }
 
+.col-100 {
+  float: left;
+  width: 100%;
+  margin-top: 6px;
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
@@ -68,8 +79,14 @@ b {
   color: #4CAF50;
 }
 
+label {
+  width: 10%;
+  font-size: small;
+}
+
 .slidecontainer {
-  width: 50%;
+  width: 90%;
+  margin: 10px 0;
 }
 
 .slider {
@@ -91,16 +108,23 @@ b {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background: #4CAF50;
+  background: #4CAF50;  
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  border: inset 5px #FC5185;
+  padding: 15px;
   cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: #4CAF50;
   cursor: pointer;
@@ -108,4 +132,95 @@ b {
 
 .number {
   float: right;
+}
+
+#bar {
+  width: 10%;
+  background: red;
+  transition: width 1s;
+  padding: 10px;
+  color: white;
+}
+
+.element {
+  display: inline-block;
+  background-color: #0f3454;
+  height: 60px;
+  width: 150px;
+  font-size: 11px;
+  padding: 2px 0 2px 6px;
+  color: white;
+  margin-right: 5px;
+  margin-left: 5px;
+  animation: skew 3s infinite;
+  transform: skew(20deg);
+  animation-direction: alternate;
+  opacity: .7;
+}
+
+.element p{
+	font-size: 16px;
+}
+
+@keyframes skew {
+  0% {
+    ransform: skewX(20deg);
+  }
+  100% {
+    transform: skewX(-20deg);
+  }
+}
+
+form {
+	animation: transitionIn 0.95s;
+}
+
+@keyframes transitionIn {
+	from {
+		opacity: 0;
+		transform: rotateX(-40deg);
+	}
+	to {
+		opacity: 1;
+		transition: rotateX(0);
+	}
+}
+
+.rotate {
+	animation: rotate 0.7s linear both;
+	font-size: 1.5em;
+	background-color: yellow;
+	padding: 10px;
+	width: 100%
+}
+
+@keyframes rotate {
+  0% {
+    transform: scale(1) rotate3d(1, 1, 0, 0deg);
+  }
+  50% {
+    transform: scale(0.5) rotate3d(1, 1, 0, -180deg);
+  }
+  100% {
+    transform: scale(1) rotate3d(1, 1, 0, -360deg);
+  }
+}
+
+
+.color-change {
+	animation: color-change 2s linear infinite alternate both;
+}
+
+
+@keyframes color-change {
+  0% {
+    background: #19dcea;
+  }
+  100% {
+    background: #b22cff;
+  }
+}
+
+.white {
+	color: white;
 }
