@@ -250,14 +250,16 @@ function calculate() {
 
   localStorage.setItem('newMacronutrients', JSON.stringify(newMacronutrients));
 
-  var retrieveMacros = localStorage.getItem('newMacronutrients');
+  
+}
+
+var retrieveMacros = localStorage.getItem('newMacronutrients');
 	var obj = JSON.parse(retrieveMacros);
 	document.getElementById("elements").innerHTML = "<div class='element'>KCAL<p>"+obj.kcal+" gm</p></div>" +
 	                                                "<div class='element'>CHO<p>"+obj.cho+" gm</p></div>"+
-                                                "<div class='element'>CHON<p>"+obj.chon+" gm</p></div>"+
-                                                "<div class='element'>COOH<p>"+obj.cooh+" gm</p></div>";
+                                                	"<div class='element'>CHON<p>"+obj.chon+" gm</p></div>"+
+                                                	"<div class='element'>COOH<p>"+obj.cooh+" gm</p></div>";
 
-}
 
 
 //Go to previous page
